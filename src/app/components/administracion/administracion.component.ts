@@ -29,7 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './administracion.component.scss'
 })
 export class AdministracionComponent implements OnInit  {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'symbol2'];
+  displayedColumns: string[] = ['position', 'name', 'descripcion', 'weight', 'symbol', 'symbol2'];
   dataSource = [];
   modulos: any;
   moduloForm: FormGroup;
@@ -40,7 +40,8 @@ export class AdministracionComponent implements OnInit  {
   constructor(private fb: FormBuilder, private modulosService: ModulosService){
     this.moduloForm = this.fb.group({
       id: ['', Validators.required],
-      nombre: ['', [Validators.required]]
+      nombre: ['', [Validators.required]],
+      descripcion: ['', Validators.required]
     });
   }
 
@@ -106,6 +107,7 @@ export class AdministracionComponent implements OnInit  {
     this.moduloForm = this.fb.group({
       id: [currentModulo.id, Validators.required], // Default value: 'John Doe'
       nombre: [currentModulo.nombre, [Validators.required]],
+      descripcion: [currentModulo.descripcion, [Validators.required]]
     });
   }
 

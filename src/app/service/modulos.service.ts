@@ -7,7 +7,7 @@ import { catchError, Observable } from 'rxjs';
 })
 export class ModulosService {
   
-  private apiUrl = 'http://localhost:8080/api/v1/modulos'
+  private apiUrl = 'http://localhost:8001/api/v1/modulos'
 
   constructor(private http: HttpClient) {
    }
